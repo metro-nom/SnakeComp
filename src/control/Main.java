@@ -1,12 +1,10 @@
 package control;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.*;
 import java.util.List;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.event.*;
 
@@ -37,7 +35,7 @@ public class Main {
      *             can be specified from the UI.
      */
     public static void main(final String[] args) {
-        final JFrame frame = new JFrame("Snake Competition");
+        final JFrame frame = new JFrame("SnakeTest");
         final JPanel content = new JPanel(new GridBagLayout());
         final JPanel statsAndControls = new JPanel();
         statsAndControls.setLayout(new GridBagLayout());
@@ -54,24 +52,15 @@ public class Main {
         final SettingsDisplay settingsDisplay = new SettingsDisplay(settings, competition, control);
         final CompetitionDisplay competitionDisplay =
             new CompetitionDisplay(settings, competition, snakeControls, control);
-        BufferedImage pic = null;
-        try {
-        	pic = ImageIO.read(new File("/home/stroeder/SnakeComp/metro.png"));
-        } catch (final IOException e) {
-        	
-        }
-        final JLabel picLabel = new JLabel(new ImageIcon(pic));
         final GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
         c.gridy = 0;
         c.fill = GridBagConstraints.HORIZONTAL;
         c.weightx = 1.0;
-        statsAndControls.add(picLabel, c);
-        c.gridy = 1;
         statsAndControls.add(snakesDisplay, c);
-        c.gridy = 2;
+        c.gridy = 1;
         statsAndControls.add(settingsDisplay, c);
-        c.gridy = 3;
+        c.gridy = 2;
         statsAndControls.add(competitionDisplay, c);
         c.gridy = 0;
         c.anchor = GridBagConstraints.NORTHEAST;
