@@ -25,9 +25,14 @@ public class Main
 	 */
 	private static final List<SnakeControl> PRE_DEFINED_SNAKE_CONTROLS =
 			Arrays.asList(
-					new GreedySnakeControl(),
-					new ODSSnakeControl()
+					//new GreedySnakeControl(),
+					new ODSSnakeControl(),
 					//new RandomSnakeControl(),
+					new Lakbermit(),
+					new Aberkonderbir(),
+					new MasterSnakeControl(),
+					new Lakbermit2(),
+					new LCSS()
 					//new RotatingSnakeControl(),
 					//new UpLeftSnakeControl()
 			);
